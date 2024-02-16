@@ -1,3 +1,3 @@
-FROM zhangjicmu/ubuntu20_ros:cmu_vla_challenge_base_system
+FROM zhangjicmu/ubuntu20_ros:cmu_vla_challenge_simulation
 
 CMD ["bash"]

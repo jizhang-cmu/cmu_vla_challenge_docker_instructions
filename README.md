@@ -88,9 +88,9 @@ Access the running container.
 ```
 docker exec -it ubuntu20_ros bash
 ```
-Now, you can launch the base system. You can further modify the system to make it a full setup for the challenge.
+Now, you can launch the base system. In the terminal, the system will ask you to type in the question. Type in any words and enter, the vehicle will navigate and reach two waypoints sequentially. If you use the control panel to navigate the vehicle, to resume waypoint navigation after, click the 'Resume Navigation to Goal' button. You can further modify the software in the '/home/docker/ai_module' folder and replace the 'dummy_vlm' package with yours for the challenge.
 ```
-/home/docker/cmu_vla_challenge_unity/system_bring_up.sh
+/home/docker/start_cmu_vla_challenge.sh
 ```
 After you are done with the modifications, push the image to Docker Hub. To do this, create a Dock Hub account and login to the account from another terminal (not the terminal accessing the container).
 ```
@@ -99,8 +99,8 @@ docker login -u [DOCKERHUB_USERNAME]
 Commit the container to a Docker image and push the image to Docker Hub with command lines below. To view [IMAGE_ID], use the ``docker images`` command and pick the Docker image that is created latest.
 ```
 docker commit ubuntu20_ros ubuntu20_ros
-docker tag [IMAGE_ID] [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_full_setup
-docker push [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_full_setup
+docker tag [IMAGE_ID] [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_simulation
+docker push [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_simulation
 ```
 
 ## Pull Docker Image and Check
@@ -111,7 +111,7 @@ xhost +
 ```
 Pull the uploaded image. To do this, you need to remove the uploaded Docker image from your computer. Instructions are in the next section.
 ```
-docker pull [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_full_setup
+docker pull [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_simulation
 ```
 For computers **without a Nvidia GPU**, start the container. Replace [IMAGE_ID] in the command line. You can view [IMAGE_ID] with the ``docker images`` command.
 ```
@@ -129,7 +129,7 @@ docker run --gpus all -it --rm --privileged -e DISPLAY -e QT_X11_NO_MITSHM=1 \
 ```
 Launch the simulation system.
 ```
-/home/docker/cmu_vla_challenge_unity/system_bring_up.sh
+/home/docker/start_cmu_vla_challenge.sh
 ```
 
 ## Other Useful Commands

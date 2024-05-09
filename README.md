@@ -105,11 +105,11 @@ docker push [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_simulation
 
 ## Pull Docker Image and Check
 
-Allow remote X connection.
+Make sure to follow these steps to pull the image and check, as the image will be pulled in the same way in the challenge evaluation. Allow remote X connection.
 ```
 xhost +
 ```
-Pull the uploaded image. To do this, you need to remove the uploaded Docker image from your computer. Instructions are in the next section.
+Pull the image. To do this, you need to remove the uploaded Docker image from your computer. Instructions are in the next section.
 ```
 docker pull [DOCKERHUB_USERNAME]/ubuntu20_ros:cmu_vla_challenge_simulation
 ```
@@ -131,6 +131,10 @@ Launch the simulation system.
 ```
 /home/docker/start_cmu_vla_challenge.sh
 ```
+
+## Use Different Base Image
+
+To use a different base image, e.g. with CUDA pre-installation, you may use the provided 'Dockerfile_base' file. First, rename 'Dockerfile' to something else and rename 'Dockerfile_base' to 'Dockerfile'. Edit the base image name on the first line of the file and point it to the image you would like to use. Then, follow instructions in the **Prepare Docker Image** section to start the container and access it. Copy all files and folders from the provided image to the new image. In a terminal, go to the 'cmu_vla_challenge_unity' and 'ai_module' folders to recompile the repositories by removing the 'build' and 'devel' folders followed by and the 'catkin_make' command.
 
 ## Other Useful Commands
 

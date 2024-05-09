@@ -43,6 +43,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
     python3-rosdep \
     python3-rosinstall \
     python3-vcstools \
+    python-is-python3 \
+    python-yaml \
+    libusb-dev \
     && rm -rf /var/lib/apt/lists/*
 
 ########Tools and dependencies########

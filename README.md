@@ -134,7 +134,7 @@ Launch the simulation system.
 
 ## Use Different Base Image
 
-To use a different base image, e.g. with CUDA pre-installation, you may use the provided 'Dockerfile_base' file. First, rename 'Dockerfile' to something else and rename 'Dockerfile_base' to 'Dockerfile'. Edit the base image name on the first line of the file and point it to the image you would like to use. Then, follow instructions in the **Prepare Docker Image** section to start the container and access it. Copy all files and folders from the provided image to the new image. In a terminal, go to the 'cmu_vla_challenge_unity' and 'ai_module' folders to recompile the repositories by removing the 'build' and 'devel' folders followed by and the 'catkin_make' command.
+To use a different base image, e.g. with CUDA pre-installation, you may use the provided 'Dockerfile_base' file. First, rename 'Dockerfile' to something else and rename 'Dockerfile_base' to 'Dockerfile'. Edit the base image name on the first line of the file and point it to the image you would like to use. Then, follow instructions in the **Prepare Docker Image** section to start the container and access it. Copy all files and folders from the '/home/docker' folder (right after accessing the container) in the provided image to the new image. In a terminal, go to the 'cmu_vla_challenge_unity' and 'ai_module' folders to recompile the repositories by removing the 'build' and 'devel' folders followed by the 'catkin_make' command. Note that the containers are started with access to the '/home/username' folder on the computer for you to copy files in and out of the images.
 
 ## Other Useful Commands
 

@@ -88,7 +88,7 @@ Access the running container.
 ```
 docker exec -it ubuntu20_ros bash
 ```
-Now, you can launch the base system. In the terminal, the system will ask you to type in the question. Type in any words and enter, the vehicle will navigate and reach two waypoints sequentially. If you use the control panel to navigate the vehicle, to resume waypoint navigation after, click the 'Resume Navigation to Goal' button. You can further modify the software in the '/home/docker/ai_module' folder and replace the 'dummy_vlm' package with yours for the challenge.
+Now, you can launch the base system. In the terminal, the system will ask you to type in the question. Type in any words and enter, the vehicle will navigate and reach two waypoints sequentially. A visualization marker is also displayed for object reference. If you use the control panel to navigate the vehicle, to resume waypoint navigation after, click the 'Resume Navigation to Goal' button. You can further modify the software in the '/home/docker/ai_module' folder and replace the 'dummy_vlm' package with yours for the challenge.
 ```
 /home/docker/start_cmu_vla_challenge.sh
 ```
